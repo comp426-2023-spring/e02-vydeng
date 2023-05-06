@@ -2,8 +2,24 @@
     <head>
         <title>Rock</title>
         <!-- Link to your script file(s) and CSS in here somewhere -->
+        <script src="scripts.js"></script>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
+        <h1>ROCK PAPER SCISSORS</h1>
+        <form action="" id="gameForm">
+            <p>Select your version of the game:</p>
+            <input type="radio" id="rps" name="version" value="RPS">
+            <label for="rps">Play Rock Paper Scissors</label><br>
+            <input type="radio" id="rpsls" name="version" value="RPSLS">
+            <label for="rpsls">Play Rock Paper Scissors Lizard Spock</label><br>
+            <br>
+            <input type="checkbox" id="opponent" name="opponent" value="Opponent">
+            <label for="opponent">Play against an opponent</label><br>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+          
 
     <!-- Your interface markup goes here -->
     <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
