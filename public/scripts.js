@@ -20,6 +20,7 @@ async function play() {
     var winner = document.getElementById("winner");
     var rand_move = document.getElementById("rand_move")
     var opponentGame = document.getElementById("opponentGame")
+    var rules = document.getElementById("rules")
     if (rpsVersion && hasOpponent) {
         var move;
         var radios = document.getElementsByName("move");
@@ -34,8 +35,9 @@ async function play() {
         player.innerHTML = `Player move: ${data.player}`;
         opponent.innerHTML = `Opponent move: ${data.opponent}`;
         winner.innerHTML = `Result: ${data.result}`;
-        opponentGame.className = "active"
-        rand_move.className = "inactive"
+        opponentGame.className = "active";
+        rand_move.className = "inactive";
+        rules.className = "inactive";
     }
     else if (rpsVersion) {
         const response = await fetch(`/app/rps/play`);
@@ -43,6 +45,7 @@ async function play() {
         rand_move.innerHTML = `Move: ${data.player}`;
         opponentGame.className = "inactive"
         rand_move.className = "active"
+        rules.className = "inactive";
     }
     else if (hasOpponent) {
         var move;
@@ -60,6 +63,7 @@ async function play() {
         winner.innerHTML = `Result: ${data.result}`;
         opponentGame.className = "active"
         rand_move.className = "inactive"
+        rules.className = "inactive";
     }
     else {
         const response = await fetch(`/app/rpsls/play`);
@@ -67,7 +71,19 @@ async function play() {
         rand_move.innerHTML = `Move: ${data.player}`;
         opponentGame.className = "inactive"
         rand_move.className = "active"
+        rules.className = "inactive";
     }
+    var modal = document.getElementById("modal");
+    modal.style.display = "block";
+}
+
+async function openRules() {
+    var rand_move = document.getElementById("rand_move");
+    var opponentGame = document.getElementById("opponentGame");
+    var rules = document.getElementById("rules");
+    rand_move.className = "inactive";
+    opponentGame.className = "inactive";
+    rules.className = "active";
     var modal = document.getElementById("modal");
     modal.style.display = "block";
 }
