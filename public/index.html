@@ -7,18 +7,51 @@
     </head>
     <body>
         <h1>ROCK PAPER SCISSORS</h1>
-        <form action="" id="gameForm">
+        <form action="" id="settings">
             <p>Select your version of the game:</p>
-            <input type="radio" id="rps" name="version" value="RPS">
+            <input type="radio" id="rpsSelect" name="version" onclick="rpsSelected()" value="RPS">
             <label for="rps">Play Rock Paper Scissors</label><br>
-            <input type="radio" id="rpsls" name="version" value="RPSLS">
+            <input type="radio" id="rpslsSelect" name="version" onclick="rpslsSelected()" value="RPSLS">
             <label for="rpsls">Play Rock Paper Scissors Lizard Spock</label><br>
             <br>
-            <input type="checkbox" id="opponent" name="opponent" value="Opponent">
+            <input type="checkbox" id="opponent" name="opponent" onchange="opponentChange()" value="Opponent">
             <label for="opponent">Play against an opponent</label><br>
             <br>
-            <input type="submit" value="Submit">
+            
+            <div id="rps" class="inactive">
+            <p>Choose your move:</p>
+            <input type="radio" name="move" value="rock">
+            <label for="rps">Rock</label><br>
+            <input type="radio" name="move" value="paper">
+            <label for="rps">Paper</label><br>
+            <input type="radio" name="move" value="scissors">
+            <label for="rps">Scissors</label><br>
+            </div>
+            <div id="rpsls" class="inactive">
+            <input type="radio" name="move" value="lizard">
+            <label for="rpsls">Lizard</label><br>
+            <input type="radio" name="move" value="spock">
+            <label for="rpsls">Spock</label><br>
+            </div>
+            <br>
+
         </form>
+
+        <button id="play" onclick="play()">Play!</button>
+        <button id="reset" onclick="reset()">Reset</button>
+        <button class="rules" onclick="openRules()">Rules</button>
+
+        <div id="modal" class="popup">
+            <div class="results">
+                <span onclick="closepopup()" class="close">&times;</span>
+                <div class="inactive" id="opponentGame">
+                    <p id="playerMove"></p>
+                    <p id="opponentMove"></p>
+                    <p id="winner"></p>
+                </div>
+                <p class="inactive" id="rand_move"></p>
+            </div>
+        </div>
           
 
     <!-- Your interface markup goes here -->

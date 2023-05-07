@@ -88,21 +88,13 @@ app.get('/app/rpsls', (req, res) => {
     res.status(200).send(rpsls());
 });
 
-app.get('/app/rps/play/', (req, res) => {
+app.get('/app/rps/play', (req, res) => {
     res.status(200).send(rps(req.query.shot));
 });
-
-app.post('/app/rps/play', (req, res) => {
-	res.status(200).send(rps(req.body.shot));
-})
 
 app.get('/app/rpsls/play', (req, res) => {
     res.status(200).send(rpsls(req.query.shot));
 });
-
-app.post('/app/rpsls/play', (req, res) => {
-	res.status(200).send(rpsls(req.body.shot));
-})
 
 app.get('/app/rps/play/:arg', (req, res) => {
 	res.status(200).send(rps(req.params.arg));
