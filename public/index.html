@@ -1,38 +1,44 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <title>Rock</title>
+        <meta charset="UTF-8">
+        <title>Rock Paper Scissors</title>
         <!-- Link to your script file(s) and CSS in here somewhere -->
         <script src="scripts.js"></script>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <h1>ROCK PAPER SCISSORS</h1>
-        <p>Select your version of the game:</p>
-        <input type="radio" id="rpsSelect" name="version" onclick="rpsSelected()" value="RPS">
-        <label for="rps">Play Rock Paper Scissors</label><br>
-        <input type="radio" id="rpslsSelect" name="version" onclick="rpslsSelected()" value="RPSLS">
-        <label for="rpsls">Play Rock Paper Scissors Lizard Spock</label><br>
-        <br>
-        <input type="checkbox" id="opponent" name="opponent" onchange="opponentChange()" value="Opponent">
-        <label for="opponent">Play against an opponent</label><br>
-        <br>
-        
-        <div id="rps" class="inactive">
-        <p>Choose your move:</p>
-        <input type="radio" name="move" value="rock">
-        <label for="rps">Rock</label><br>
-        <input type="radio" name="move" value="paper">
-        <label for="rps">Paper</label><br>
-        <input type="radio" name="move" value="scissors">
-        <label for="rps">Scissors</label><br>
+        <div class="left">
+            <strong>Select your version of the game:</strong>
+            <br>
+            <input type="radio" id="rpsSelect" name="version" onclick="rpsSelected()" value="RPS">
+            <label for="rpsSelect">Play Rock Paper Scissors</label><br>
+            <input type="radio" id="rpslsSelect" name="version" onclick="rpslsSelected()" value="RPSLS">
+            <label for="rpslsSelect">Play Rock Paper Scissors Lizard Spock</label><br>
+            <br>
+            <input type="checkbox" id="opponent" name="opponent" onchange="opponentChange()" value="Opponent">
+            <label for="opponent">Play against an opponent</label><br>
+            <br>
+            
+            <div id="rps" class="inactive">
+            <strong>Choose your move:</strong>
+            <br>
+            <input type="radio" id="rock" name="move" value="rock">
+            <label for="rock">Rock</label><br>
+            <input id="paper" type="radio" name="move" value="paper">
+            <label for="paper">Paper</label><br>
+            <input id="scissors" type="radio" name="move" value="scissors">
+            <label for="scissors">Scissors</label><br>
+            </div>
+            <div id="rpsls" class="inactive">
+            <input type="radio" id="lizard" name="move" value="lizard">
+            <label for="lizard">Lizard</label><br>
+            <input type="radio" id="spock" name="move" value="spock">
+            <label for="spock">Spock</label><br>
+            </div>
+            <br>
         </div>
-        <div id="rpsls" class="inactive">
-        <input type="radio" name="move" value="lizard">
-        <label for="rpsls">Lizard</label><br>
-        <input type="radio" name="move" value="spock">
-        <label for="rpsls">Spock</label><br>
-        </div>
-        <br>
 
         <button type="button" id="play" onclick="play()">Play!</button>
         <button type="button" id="reset" onclick="reset()">Reset</button>
@@ -48,25 +54,21 @@
                 </div>
                 <p class="inactive" id="rand_move"></p>
                 <div class="inactive" id="rules">
-                    <p class="version">Rules for Rock Paper Scissors</p>
-                    <ul class="rps_rules">
-                        <li>Scissors CUTS Paper</li>
-                        <li>Paper COVERS Rock</li>
-                        <li>Rock CRUSHES Scissors</li>
-                    </ul>
-                    <p class="version">Rules for Rock Paper Scissors Lizard Spock</p>
-                    <ul class="rpsls_rules">
-                        <li>Scissors CUTS Paper</li>
-                        <li>Paper COVERS Rock</li>
-                        <li>Rock SMOOSHES Lizard</li>
-                        <li>Lizard POISONS Spock</li>
-                        <li>Spock SMASHES Scissors</li>
-                        <li>Scissors DECAPITATES Lizard</li>
-                        <li>Lizard EATS Paper</li>
-                        <li>Paper DISPROVES Spock</li>
-                        <li>Spock VAPORIZES Rock</li>
-                        <li>Rock CRUSHES Scissors</li>
-                    </ul>
+                    <strong>Rules for Rock Paper Scissors</strong>
+                    <p>Scissors CUTS Paper</p>
+                    <p>Paper COVERS Rock</p>
+                    <p>Rock CRUSHES Scissors</p>
+                    <strong>Rules for Rock Paper Scissors Lizard Spock</strong>
+                    <p>Scissors CUTS Paper</p>
+                    <p>Paper COVERS Rock</p>
+                    <p>Rock SMOOSHES Lizard</p>
+                    <p>Lizard POISONS Spock</p>
+                    <p>Spock SMASHES Scissors</p>
+                    <p>Scissors DECAPITATES Lizard</p>
+                    <p>Lizard EATS Paper</p>
+                    <p>Paper DISPROVES Spock</p>
+                    <p>Spock VAPORIZES Rock</p>
+                    <p>Rock CRUSHES Scissors</p>
                 </div>
             </div>
         </div>
